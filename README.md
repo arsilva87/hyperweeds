@@ -7,6 +7,9 @@
 
 [&#x1f4bb; **Presentation SLIDES**](https://arsilva87.github.io/hyperweeds/slides.html)
 
-## &#x2709; Research team/Contact
+## &#x2709; Team and contact
 * Prof. Dr. Anderson Rodrigo da Silva. Instituto Federal Goiano (Brazil). E-mail: <anderson.silva@ifgoiano.edu.br>
 * Prof. Dr. Jarosław Chormański. Warsaw University of Life Sciences (Poland). E-mail: <jaroslaw_chormanski@sggw.edu.pl>
+
+## &#x2690; Support
+<img src="images/logo_IFgoiano.png" width="8%" height="8%"> <img src="images/logo_sggw.png" width="18%" height="18%"> <img src="images/logo_nawa.jpg" width="16%" height="16%">
