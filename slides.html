@@ -14490,7 +14490,7 @@ Note: you may need to restart the kernel to use updated packages.
 </aside></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="The-Problem">The Problem<a class="anchor-link" href="#The-Problem">&#182;</a></h1>
+<h1 id="Problematization">Problematization<a class="anchor-link" href="#Problematization">&#182;</a></h1>
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14529,7 +14529,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><img align="top" src="images/herb_resistance.png" width="100%" height="100%"></p>
-<p><em>Source: <a href="https://www.upherb.com.br/">https://www.upherb.com.br/</a></em></p>
+<p>Herbicide resistance. <em>Source: <a href="https://www.upherb.com.br/">https://www.upherb.com.br/</a></em></p>
 
 </div>
 </div></section><section>
@@ -14545,26 +14545,26 @@ Note: you may need to restart the kernel to use updated packages.
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="And-what-should-we-do?">And what should we do?<a class="anchor-link" href="#And-what-should-we-do?">&#182;</a></h1>
+<h1 id="And-what-should-we-do-about-it?">And what should we do about it?<a class="anchor-link" href="#And-what-should-we-do-about-it?">&#182;</a></h1>
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img align="top" src="images/site-especific.jpg" width="50%" height="50%"></p>
+<p><img align="top" src="images/site-specific.jpg" width="95%" height="95%"></p>
 <p><em>Source: Shawn, 2005</em> (Front. Ecol. Environ.)</p>
 
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="And-to-automatically-discriminate-monocots-and-dicots:">And to automatically discriminate monocots and dicots:<a class="anchor-link" href="#And-to-automatically-discriminate-monocots-and-dicots:">&#182;</a></h3><p><img align="top" src="images/mono-dico.png" width="90%" height="90%"></p>
+<h3 id="And-to-automatically-discriminate-monocots-and-dicots:">And to automatically discriminate monocots and dicots:<a class="anchor-link" href="#And-to-automatically-discriminate-monocots-and-dicots:">&#182;</a></h3><p><img align="top" src="images/mono-dicots.png" width="90%" height="90%"></p>
 <p><em>Source: Da Silva, 2019</em> (J. Appl. Remote Sens.)</p>
 
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="The-main-objective">The main objective<a class="anchor-link" href="#The-main-objective">&#182;</a></h1><p>To detect and discriminate grassy and broadleaf weeds from hiperspectral UAV images of winter wheat fields.</p>
+<h1 id="The-main-objective">The main objective<a class="anchor-link" href="#The-main-objective">&#182;</a></h1><p>To detect and discriminate grassy and broadleaf weeds using UAV hyperspectral images of winter wheat fields.</p>
 
 </div>
 </div></section></section><section><section>
@@ -14581,21 +14581,15 @@ Note: you may need to restart the kernel to use updated packages.
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Reflectance-conversion">Reflectance conversion<a class="anchor-link" href="#Reflectance-conversion">&#182;</a></h3><ul>
-<li>$R = \frac{V_{Raw} - V_D}{V_W - V_D}$</li>
-</ul>
-<h3 id="Segmentation-of-vegetation/background">Segmentation of vegetation/background<a class="anchor-link" href="#Segmentation-of-vegetation/background">&#182;</a></h3><ul>
-<li>$ExG = 2R_{550} - R_{650} - R_{480}$ .</li>
-<li>Otsu (Adaptive) thresholding</li>
-</ul>
+<h3 id="Reflectance-conversion">Reflectance conversion<a class="anchor-link" href="#Reflectance-conversion">&#182;</a></h3><p>$R = \frac{V_{Raw} - V_D}{V_W - V_D}$</p>
+<h3 id="Segmentation-of-vegetation/background">Segmentation of vegetation/background<a class="anchor-link" href="#Segmentation-of-vegetation/background">&#182;</a></h3><p>$ExG = 2R_{550} - R_{650} - R_{480}$</p>
+<p>Otsu (Adaptive) thresholding</p>
 
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Detection-of-crop-rows">Detection of crop rows<a class="anchor-link" href="#Detection-of-crop-rows">&#182;</a></h3><ul>
-<li>Seeder coordinates or... Segmented image $\rightarrow$ Image thinning $\rightarrow$ (Morph. operation) $\rightarrow$ Hough transform</li>
-</ul>
+<h3 id="Detection-of-crop-rows">Detection of crop rows<a class="anchor-link" href="#Detection-of-crop-rows">&#182;</a></h3><p>Seeder coordinates or... Segmented image $\rightarrow$ Image thinning $\rightarrow$ (Morph. operation) $\rightarrow$ Hough transform</p>
 <p><img src="images/segmentation1.png" width="100%" height="100%"></p>
 
 </div>
