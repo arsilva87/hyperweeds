@@ -31,7 +31,7 @@ read.HSC2 <- function(path, headerfile = sub(".dat", ".hdr", path))
    attr(A, "wavelength") <- wave_length
    attr(A, "gain") <- gain
    attr(A, "irradiance") <- irradiance
-   attr(A, "coords") <- coords
+   attr(A, "coordinates") <- as.matrix(coords)
    return(A)
 }
 
