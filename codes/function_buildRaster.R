@@ -1,0 +1,16 @@
+cat("\nbuildRaster(), a function to build a raster layer from a .h5 
+	file containing hypespectral data of the Senop HSC-2 camera.\n")
+
+buildRaster <- function(path, 
+	spectral_feature = c("radiance", "dn", "reflectance"), 
+	layer = 35)    # ref. band
+{
+   feat <- match.arg(spectral_feature)
+   dat <- rhdf5::h5read(path, paste0("array_", feat), 
+      index = list(NULL, NULL, layer), 
+      read.attributes = TRUE)
+   ra <- raster::raster(drop(dat)) 
+   extent(ra) <- raster::extent(c(attr(dat, "spatial_extent")))
+   crs(ra) <- attr(dat, "CRS")
+   return(ra)
+}
