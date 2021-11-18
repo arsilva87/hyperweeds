@@ -7,7 +7,7 @@ buildBrick <- function(path,
 {
    feat <- match.arg(spectral_feature)
    dat <- rhdf5::h5read(path, paste0("array_", feat), 
-      index = list(NULL, NULL, layer), 
+      index = list(NULL, NULL, layers), 
       read.attributes = TRUE)
    ra <- raster::brick(dat)
    extent(ra) <- raster::extent(c(attr(dat, "spatial_extent")))
