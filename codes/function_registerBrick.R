@@ -25,6 +25,8 @@ registerBrick <- function(Brick, ref_layer = 1,
       crop(x, cropped_ext)
    })
    regbrick <- brick(newlist)
+   bands <- attr(Brick, "wavelength")[w]
+   attr(regbrick, "wavelength") <- bands
    return(regbrick)
 }
 
