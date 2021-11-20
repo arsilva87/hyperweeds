@@ -1,8 +1,8 @@
-cat("\nregisterBands_HOG(), a function for band-to-band (raster layers) 
+cat("\nregisterBands(), a function for band-to-band (raster layers) 
    registration (spatial alignment) based on HOG descriptor.
 Warning: it does not correct rotation, only translation (xy) shifts.\n")
 
-registerBands_HOG <- function(slave, master, ncells = 24, orient = 8) 
+registerBands <- function(slave, master, ncells = 24, orient = 8) 
 {
    bx <- res(master)[1] * ncol(master)/10
    by <- res(master)[2] * nrow(master)/10
