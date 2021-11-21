@@ -6,7 +6,7 @@ registerBrick <- function(Brick, ref_layer = 1,
 	layers = "all",
 	ncells = 24, orient = 8) 
 {
-   if (layers == "all") {
+   if (layers[1] == "all") {
       w <- 1:nlayers(Brick) 
    } else { 
       w <- as.integer(layers)
@@ -25,8 +25,6 @@ registerBrick <- function(Brick, ref_layer = 1,
       crop(x, cropped_ext)
    })
    regbrick <- brick(newlist)
-   bands <- attr(Brick, "wavelength")[w]
-   attr(regbrick, "wavelength") <- bands
    return(regbrick)
 }
 

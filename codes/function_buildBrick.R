@@ -45,6 +45,6 @@ buildBrick <- function(path,
       extent(rb) <- raster::extent(HDR$extents[ref_layer,])
       crs(rb) <- HDR$CRS
    }
-   attr(rb, "wavelength") <- HDR$wavelength
+   names(rb) <- paste0("b", HDR$wavelength)
    return(rb)
 }
