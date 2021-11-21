@@ -4,11 +4,11 @@ cat("\nslideBrick(), a function to comput statistics calculated through
 
 source("https://raw.githubusercontent.com/arsilva87/hyperweeds/main/codes/function_slideWindows.R")
 
-slideBrick <- function(Brick, n = c(8, 8), fun = median) 
+slideBrick <- function(Brick, slide_windows, fun = median) 
 {
-   win_exts <- slideWindows(Brick, n = n)
+   stopifnot(inherits(slide_windows, "slideWindows"))
+   win_exts <- slide_windows
    brickset <- lapply(win_exts, crop, x = Brick)
    stats <- sapply(brickset, cellStats, stat = fun)
-   class(stats) <- "slideBrick"
    return(stats)
 }
