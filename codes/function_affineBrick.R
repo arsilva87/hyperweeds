@@ -13,7 +13,7 @@ affineBrick <- function(Brick, angle = 0, xy_shift = c(0, 0))
       crs(rb) <- crs(Brick)
       newb <- rasterize(x = rxy, y = rb, field = values(Brick))
    } else {
-      newb <- Brick
+      newb <- shift(Brick, xy_shift)
    }
    return(newb)
 }
