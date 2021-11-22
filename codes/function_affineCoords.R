@@ -18,6 +18,8 @@ affineCoords <- function(s, angle = 0, xy_shift = c(0, 0))
       new_coords <- rxy
    } else {
       new_coords <- xy
+      if (any(xy_shift != 0)) 
+         new_coords <- sweep(xy, 2, xy_shift, FUN = "+")
    }
    return(new_coords)
 }
