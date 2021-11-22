@@ -1,4 +1,4 @@
-cat("\naffineCoords(), a function to apply affine transformation, i.e.,
+cat("\naffineCoords(), a function to apply affine transformation of
   rotation and translation on the 2D coordinates of a spatial object, 
   such as extent, raster/brick/stack, SpatialPolygon etc.).\n")
 
@@ -8,18 +8,15 @@ affineCoords <- function(s, angle = 0, xy_shift = c(0, 0))
    xy <- coordinates(s)
    if (angle != 0 & angle != 360 & angle != -360) { 
       a <- angle*pi/180
-      rot <- matrix(c(cos(a), -sin(a), sin(a), cos(a)), nrow = 2)
       cen <- colMeans(xy)
-      rxy <- sweep(sweep(xy, 2, cen) %*% rot, 
-         2, cen + xy_shift, FUN = "+")
-      rxy <- as.data.frame(rxy)
-      colnames(rxy) <- c("x", "y")
-      coordinates(rxy) <- ~x+y
-      new_coords <- rxy
+      aff_mat <- matrix(c(cos(a), -sin(a), cen[1] + xy_shift[1], 
+         sin(a), cos(a), cen[2] + xy_shift[2]), nrow = 3)
+      xy_cen <- sweep(xy, 2, cen)
+      new_xy <- cbind(xy_cen, 1) %*% aff_mat
    } else {
-      new_coords <- xy
+      new_xy <- xy
       if (any(xy_shift != 0)) 
-         new_coords <- sweep(xy, 2, xy_shift, FUN = "+")
+         new_xy <- sweep(xy, 2, xy_shift, FUN = "+")
    }
-   return(new_coords)
+   return(new_xy)
 }
