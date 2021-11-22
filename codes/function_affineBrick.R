@@ -11,7 +11,7 @@ affineBrick <- function(Brick, angle = 0, xy_shift = c(0, 0))
       cen <- colMeans(xy)
       rxy <- sweep(sweep(xy, 2, cen) %*% rot, 
          2, cen + xy_shift, FUN = "+")
-      rxy <- as.data.frame(xy)
+      rxy <- as.data.frame(rxy)
       colnames(rxy) <- c("x", "y")
       coordinates(rxy) <- ~x+y
       rb <- raster::brick()
